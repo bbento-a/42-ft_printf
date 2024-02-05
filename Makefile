@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/23 10:47:24 by bbento-a          #+#    #+#              #
-#    Updated: 2023/12/19 11:39:02 by paugonca         ###   ########.fr        #
+#    Updated: 2023/12/20 11:56:26 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,4 +29,4 @@ fclean: clean
 	$(RM) $(NAME)
 re: fclean $(NAME)
 
-.PHONY: all bonus clean fclean libft re
+.PHONY: all bonus clean fclean re

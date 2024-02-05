@@ -6,25 +6,27 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 17:46:27 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/18 12:27:30 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:22:56 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_pnb(int nbr, char *base, int len)
+int	ft_pnb(long long int nbr, int base, int counter, char flag)
 {
-	int		res;
-	int		counter;
+	char	*hexa_min = "0123456789abcdef";
+	char	*hexa_max = "0123456789ABCDEF";
 
-	counter = 0;
 	if (nbr < 0)
 	{
 		nbr *= -1;
-		counter += ft_printf_c('-');
+		counter += write(1, "-", 1);
 	}
-	if (nbr >= len)
-		ft_pnb(res / len, base, len);
-	counter += ft_printf_c(base[res % len]);
+	if (nbr > base)
+		ft_pnb((nbr / base), base, counter, flag);
+	if (flag != 'X')
+		counter += write(1, &hexa_min[nbr % base], 1);
+	else
+		counter += write(1, &hexa_max[nbr % base], 1);
 	return (counter);
 }

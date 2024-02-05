@@ -6,12 +6,11 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:07 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/18 12:11:52 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:26:03 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include <stdio.h>
+#include "ft_printf.h"
 
 int	ft_format_flags(va_list args, const char format)
 {
@@ -27,13 +26,13 @@ int	ft_format_flags(va_list args, const char format)
 	//else if (format == 'p')
 	//	counter += ft_printf_p(va_arg(args, unsigned int));
 	else if (format == 'd' || format == 'i')
-		counter += ft_pnb(va_arg(args, int), "0123456789", 10);
+		counter += ft_pnb(va_arg(args, int), 10, counter, format);
 	else if (format == 'u')
-		counter += ft_pnb(va_arg(args, unsigned int), "0123456789", 10);
+		counter += ft_pnb(va_arg(args, unsigned int), 10, counter, format);
 	else if (format == 'x')
-		counter += ft_pnb(va_arg(args, unsigned int), "0123456789abcdef", 16);
+		counter += ft_pnb(va_arg(args, unsigned int), 16, counter, format);
 	else if (format == 'X')
-		counter += ft_pnb(va_arg(args, unsigned int), "0123456789ABCDEF", 16);
+		counter += ft_pnb(va_arg(args, unsigned int), 16, counter, format);
 	return (counter);
 }
 
@@ -58,5 +57,19 @@ int	ft_printf(const char *s, ...)
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (counter);
+}
+
+int	main(void)
+{
+	char	c = 'c';
+	char	*str = NULL;
+	int		num = NULL;
+	int		hex = num;
+
+	int	res1 = printf("printf: %c %s %d %i %u %x %X %%\n", c, str, num, num, (unsigned int)num, hex, hex);
+	int res2 = ft_printf("ft_printf: %c %s %d %i %u %x %X %%\n", c, str, num, num, (unsigned int)num, hex, hex);
+
+	printf("\nprintf res: %d\n", res1);
+	printf("res: %d\n", res2);
 }

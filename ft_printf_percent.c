@@ -6,11 +6,11 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:34:06 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/18 12:10:46 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/12/20 11:54:05 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_printf_percent(void)
 {
