@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:07 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/23 12:59:19 by bbento-a         ###   ########.fr       */
+/*   Updated: 2023/12/26 10:54:44 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,18 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (counter);
 }
-/*
+
 int	main(void)
 {
 	char	c = 'c';
 	char	*str = "Testing";
-	int		num = 69420;
+	int		num = -69420;
 	int		hex = num;
+	char	*nulstr = NULL;
+	void	*ptr = NULL;
 
-	printf("printf pointers: %p %p %p %p\n", &c, str, &num, &hex);
-	ft_printf("ft_printf pointers: %p %p %p %p\n", &c, str, &num, &hex);
+	printf("\nXXXXXXXXXX  Test 1  XXXXXXXXXX\n");
 
-	printf("\nTest 1\n");
 	printf("\nPrintf\n");
 	int	res1 = printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num, \
 	(unsigned int)num, hex, hex);
@@ -78,8 +78,15 @@ int	main(void)
 	int res2 = ft_printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num\
 	, (unsigned int)num, hex, hex);
 
-	printf("\nTest 2\n");
-	printf("printf res: %d\n", res1);
+	printf("\nPrintf pointers: %p %p %p %p\n", &c, str, &num, &hex);
+	ft_printf("\nFt_printf pointers: %p %p %p %p\n", &c, str, &num, &hex);
+
+	printf("\nPrintf nulls: %s %p\n", nulstr, ptr);
+	ft_printf("\nFt_printf nulls: %s %p\n", nulstr, ptr);
+
+
+	printf("\nXXXXXXXXXX  Test 2  XXXXXXXXXX\n");
+	printf("\nprintf res: %d\n", res1);
 	printf("res: %d\n", res2);
 
 	printf("\nTest c\n");
@@ -136,4 +143,4 @@ int	main(void)
 	printf("printf %% result: %d\n", r17);
 	printf("ft_ %% result: %d\n", r18);
 }
-*/
+
