@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:14:50 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/11/23 14:30:18 by bbento-a         ###   ########.fr       */
+/*   Updated: 2023/12/18 11:24:22 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_printf_c(char c)
 {
 	write(1, &c, 1);
-	return(1);
+	return (1);
 }

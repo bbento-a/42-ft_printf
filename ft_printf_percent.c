@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 14:34:06 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/11/23 15:28:26 by bbento-a         ###   ########.fr       */
+/*   Updated: 2023/12/18 12:10:46 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_printf_percent(void)
 {
-	write(1, '%', 1);
+	write(1, "%", 1);
 	return (1);
 }
