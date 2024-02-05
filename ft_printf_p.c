@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 17:46:27 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/22 15:15:59 by bbento-a         ###   ########.fr       */
+/*   Created: 2023/12/21 21:20:47 by bbento-a          #+#    #+#             */
+/*   Updated: 2023/12/22 15:10:52 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_pnb(long long int nbr, int base, int counter, char flag)
+int ft_printf_p(unsigned long int ptr)
 {
-	char	*hexa_min = "0123456789abcdef";
-	char	*hexa_max = "0123456789ABCDEF";
+	unsigned long int	temp;
+	int					counter;
 
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		counter += write(1, "-", 1);
-	}
-	if (nbr > base)
-		counter += ft_pnb((nbr / base), base, counter, flag);
-	if (flag != 'X')
-		counter += write(1, &hexa_min[nbr % base], 1);
-	else
-		counter += write(1, &hexa_max[nbr % base], 1);
-	return (counter);
+	counter = 0;
+	if (!ptr)
+		return (write(1, "(nil)", 5) && 5);
+	temp = ptr;
+	counter += write(1, "0x", 2);
+	ft_pnb(temp, 16, counter, 'p');
+	return(counter);
 }
