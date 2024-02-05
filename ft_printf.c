@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:07 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/22 15:16:53 by bbento-a         ###   ########.fr       */
+/*   Updated: 2023/12/23 12:59:19 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_format_flags(va_list args, const char format)
 
 	counter = 0;
 	if (format == '%')
-		counter += ft_printf_percent();
+		counter += ft_printf_c('%');
 	else if (format == 'c')
 		counter += ft_printf_c(va_arg(args, int));
 	else if (format == 's')
@@ -64,7 +64,7 @@ int	main(void)
 {
 	char	c = 'c';
 	char	*str = "Testing";
-	int		num = 42;
+	int		num = 69420;
 	int		hex = num;
 
 	printf("printf pointers: %p %p %p %p\n", &c, str, &num, &hex);
@@ -72,9 +72,11 @@ int	main(void)
 
 	printf("\nTest 1\n");
 	printf("\nPrintf\n");
-	int	res1 = printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num, (unsigned int)num, hex, hex);
+	int	res1 = printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num, \
+	(unsigned int)num, hex, hex);
 	printf("\nFt_printf\n");
-	int res2 = ft_printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num, (unsigned int)num, hex, hex);
+	int res2 = ft_printf("%c %s %p %d %i %u %x %X %%\n", c, str, str, num, num\
+	, (unsigned int)num, hex, hex);
 
 	printf("\nTest 2\n");
 	printf("printf res: %d\n", res1);
@@ -133,5 +135,5 @@ int	main(void)
 	int r18 = ft_printf("%%\n");
 	printf("printf %% result: %d\n", r17);
 	printf("ft_ %% result: %d\n", r18);
-*/
 }
+*/
