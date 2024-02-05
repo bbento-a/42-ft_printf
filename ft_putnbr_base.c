@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 10:55:46 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/06 18:21:54 by bbento-a         ###   ########.fr       */
+/*   Created: 2023/12/06 17:46:27 by bbento-a          #+#    #+#             */
+/*   Updated: 2023/12/06 18:25:30 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
+int	ft_pnb(int nbr, char *base) 
+{
+	char	*hex = "0123456789abcdef";
+	int		res;
 
-// MAIN FUNCTIONS
-int	ft_printf(const char *, ...);
-int	ft_printf_percent(void);
-int	ft_printf_c(char c);
-
-
-// SUPPORT FUNCTIONS
-int	ft_pnb(int nbr, char *base);
-
-#endif
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		res += write(1, "-", 1);
+	}
+	if (nbr >= base)
+		res += ft_pnb(res/)
+}
