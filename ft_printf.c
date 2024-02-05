@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:07 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/28 19:44:25 by bbento-a         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:33:33 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (counter);
 }
+
 /*
 int	main(void)
 {
