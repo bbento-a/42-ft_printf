@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:03:07 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/26 10:54:44 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:44:25 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (counter);
 }
-
+/*
 int	main(void)
 {
 	char	c = 'c';
@@ -142,5 +142,9 @@ int	main(void)
 	int r18 = ft_printf("%%\n");
 	printf("printf %% result: %d\n", r17);
 	printf("ft_ %% result: %d\n", r18);
-}
 
+	printf("\nXXXXXXXXXX  Test 3  XXXXXXXXXX\n");
+	printf("\n%c - %s - %p %d - %i - %u - %x %X %%\n", 'c', "test", (void *)-1, 20, -20, -1, -1, 200000000);
+	ft_printf("\n\n%c - %s - %p %d - %i - %u - %x %X %%", 'c', "test", (void *)-1, 20, -20, -1, -1, 200000000);
+	}
+*/
